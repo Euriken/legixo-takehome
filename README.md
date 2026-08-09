@@ -54,13 +54,46 @@ python -m app.ingest --clear
 
 ## Run the API
 
-*(not yet built — instructions will go here)*
+```bash
+uvicorn app.main:app --reload --port 8000
+```
+
+Interactive docs at `http://localhost:8000/docs`.
 
 ## Example request
 
-*(not yet built — curl example will go here)*
+```bash
+curl -X POST http://localhost:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "What court heard the dispute between the parties?"}'
+```
+
+Response shape:
+
+```json
+{
+  "answer": "...",
+  "citations": [
+    {"source_file": "some_case.md", "chunk_id": "a1b2c3..."}
+  ],
+  "trace": {
+    "loop_count": 0,
+    "grading_sufficient": true,
+    "chunks_considered": [
+      {"chunk_id": "a1b2c3...", "source_file": "some_case.md", "score": 0.87}
+    ]
+  }
+}
+```
+
+You can also trigger ingestion via the API instead of the CLI:
+
+```bash
+curl -X POST http://localhost:8000/ingest -H "Content-Type: application/json" -d '{"clear": false}'
+```
 
 ## What's skipped so far
 
-- FastAPI routes and eval harness are next. Ingest pipeline and LangGraph
-  flow (all 5 nodes) are done — see `docs/langgraph.md`.
+- Eval harness (`eval/test_cases.json` + a runner script) is next. Ingest,
+  LangGraph flow, and the FastAPI `/ask` + `/ingest` endpoints are all
+  done and working end-to-end.
