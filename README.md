@@ -27,7 +27,30 @@ cp .env.example .env
 
 ## Ingest
 
-*(not yet built — instructions will go here)*
+Drop `.txt`/`.md` files into `corpus/` (the sample corpus works as-is), then:
+
+```bash
+python -m app.ingest
+```
+
+This chunks each file (`RecursiveCharacterTextSplitter`, size/overlap set via
+`CHUNK_SIZE`/`CHUNK_OVERLAP` in `.env`), embeds chunks with
+`text-embedding-3-small`, and upserts them into Pinecone with metadata
+(`chunk_id`, `source_file`, `chunk_index`, `chunk_text`).
+
+The index is created automatically on first run if it doesn't exist
+(serverless, cosine metric, dimension matching the embedding model).
+
+**Re-running ingest:** point IDs are deterministic
+(`sha256("relative_path::chunk_index")`), so re-ingesting an unchanged
+corpus just overwrites the same vectors — no duplicates. If a file shrinks
+(fewer chunks than a previous version), old leftover chunks for that file
+could remain as orphans; use `--clear` to wipe the whole index first for a
+guaranteed-clean rebuild:
+
+```bash
+python -m app.ingest --clear
+```
 
 ## Run the API
 
@@ -39,5 +62,5 @@ cp .env.example .env
 
 ## What's skipped so far
 
-- Everything except project scaffold and config. Ingest, graph nodes, API
-  routes, and eval harness are next.
+- Graph nodes, API routes, and eval harness are next. Ingest pipeline is
+  done (see above).
