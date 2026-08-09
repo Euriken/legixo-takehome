@@ -1,0 +1,23 @@
+[
+  {
+    "id": "q01",
+    "question": "REPLACE ME: a question the corpus should answer",
+    "expected_source_files": ["some_file.md"],
+    "notes": "Placeholder -- swap in a real question once you've downloaded the sample corpus / sample_test_cases.json from the assignment page.",
+    "pass": null
+  },
+  {
+    "id": "q02",
+    "question": "REPLACE ME: another answerable question",
+    "expected_source_files": ["some_other_file.md"],
+    "notes": "",
+    "pass": null
+  },
+  {
+    "id": "out_of_corpus_01",
+    "question": "REPLACE ME: a question the corpus does NOT cover (out-of-corpus check)",
+    "expected_source_files": [],
+    "notes": "Expect the API to say it cannot find this in the documents -- no citations.",
+    "pass": null
+  }
+]

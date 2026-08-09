@@ -92,8 +92,27 @@ You can also trigger ingestion via the API instead of the CLI:
 curl -X POST http://localhost:8000/ingest -H "Content-Type: application/json" -d '{"clear": false}'
 ```
 
+## Self-test / eval
+
+`eval/test_cases.json` holds the question set (10-15 cases, including at
+least one out-of-corpus check). **Currently placeholder content** — swap in
+real questions once you've downloaded the sample corpus / gold set from the
+assignment page and ingested it (see `eval/test_cases.json` for the schema).
+
+With the API running (`uvicorn app.main:app --reload`):
+
+```bash
+python run_eval.py
+```
+
+This fires every question at `/ask`, checks whether the expected source
+file shows up in the returned citations (or, for out-of-corpus cases,
+that zero citations came back), prints pass/fail per case, and writes
+full results to `eval/results.json`.
+
 ## What's skipped so far
 
-- Eval harness (`eval/test_cases.json` + a runner script) is next. Ingest,
-  LangGraph flow, and the FastAPI `/ask` + `/ingest` endpoints are all
-  done and working end-to-end.
+- `eval/test_cases.json` still has placeholder questions — needs to be
+  filled in with real questions against the actual sample corpus once
+  it's downloaded and ingested. Everything else (ingest, LangGraph flow,
+  FastAPI endpoints, eval harness itself) is built and working.
