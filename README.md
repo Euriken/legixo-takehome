@@ -62,5 +62,5 @@ python -m app.ingest --clear
 
 ## What's skipped so far
 
-- Graph nodes, API routes, and eval harness are next. Ingest pipeline is
-  done (see above).
+- FastAPI routes and eval harness are next. Ingest pipeline and LangGraph
+  flow (all 5 nodes) are done — see `docs/langgraph.md`.
