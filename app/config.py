@@ -10,11 +10,11 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    # OpenAI
-    openai_api_key: str = "sk-dummy-replace-me"
-    llm_model: str = "gpt-4o-mini"
-    embedding_model: str = "text-embedding-3-small"
-    embedding_dim: int = 1536
+    # Google Gemini
+    google_api_key: str = "dummy-replace-me"
+    llm_model: str = "gemini-2.0-flash"
+    embedding_model: str = "models/text-embedding-004"
+    embedding_dim: int = 768
 
     # Pinecone
     pinecone_api_key: str = "pcsk-dummy-replace-me"

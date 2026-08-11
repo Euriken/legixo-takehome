@@ -14,7 +14,7 @@ State shape (TypedDict, see `GraphState` below):
 
 from typing import TypedDict
 
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from pydantic import BaseModel, Field
 
 from app.config import settings
@@ -61,12 +61,16 @@ class AnswerResult(BaseModel):
     )
 
 
-def _llm() -> ChatOpenAI:
-    return ChatOpenAI(model=settings.llm_model, api_key=settings.openai_api_key, temperature=0)
+def _llm() -> ChatGoogleGenerativeAI:
+    return ChatGoogleGenerativeAI(
+        model=settings.llm_model, google_api_key=settings.google_api_key, temperature=0
+    )
 
 
-def _embedder() -> OpenAIEmbeddings:
-    return OpenAIEmbeddings(model=settings.embedding_model, api_key=settings.openai_api_key)
+def _embedder() -> GoogleGenerativeAIEmbeddings:
+    return GoogleGenerativeAIEmbeddings(
+        model=settings.embedding_model, google_api_key=settings.google_api_key
+    )
 
 
 # ---- nodes ----

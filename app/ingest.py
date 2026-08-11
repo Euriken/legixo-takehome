@@ -17,7 +17,7 @@ import argparse
 import hashlib
 from pathlib import Path
 
-from langchain_openai import OpenAIEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from app.config import settings
@@ -65,9 +65,9 @@ def chunk_file(rel_path: str, text: str) -> list[dict]:
 
 def embed_chunks(chunks: list[dict]) -> list[dict]:
     """Adds an 'embedding' key to each chunk dict, batching the API calls."""
-    embedder = OpenAIEmbeddings(
+    embedder = GoogleGenerativeAIEmbeddings(
         model=settings.embedding_model,
-        api_key=settings.openai_api_key,
+        google_api_key=settings.google_api_key,
     )
     texts = [c["text"] for c in chunks]
 

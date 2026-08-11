@@ -13,7 +13,8 @@ Pinecone, orchestration via LangGraph, served with FastAPI.
 - FastAPI (HTTP API)
 - LangGraph (`StateGraph`) for the ask flow
 - Pinecone (serverless) for vector search
-- OpenAI (`gpt-4o-mini` for generation, `text-embedding-3-small` for embeddings)
+- Google Gemini (`gemini-2.0-flash` for generation, `text-embedding-004` for
+  embeddings) — free tier, no billing required
 
 ## Setup
 
@@ -22,7 +23,7 @@ python -m venv .venv
 source .venv/bin/activate     # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 cp .env.example .env
-# then fill in OPENAI_API_KEY and PINECONE_API_KEY in .env
+# then fill in GOOGLE_API_KEY and PINECONE_API_KEY in .env
 ```
 
 ## Ingest
