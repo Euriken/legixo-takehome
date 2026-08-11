@@ -13,8 +13,8 @@ class Settings(BaseSettings):
     # Google Gemini
     google_api_key: str = "dummy-replace-me"
     llm_model: str = "gemini-2.0-flash"
-    embedding_model: str = "models/text-embedding-004"
-    embedding_dim: int = 768
+    embedding_model: str = "models/gemini-embedding-001"
+    embedding_dim: int = 3072
 
     # Pinecone
     pinecone_api_key: str = "pcsk-dummy-replace-me"
