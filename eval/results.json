@@ -1,0 +1,164 @@
+[
+  {
+    "id": "q01",
+    "question": "Who is suing whom in Civil Suit No. CV-2024-8812?",
+    "expected_source_files": [
+      "01_matter_memo_arvind_v_northfield.md"
+    ],
+    "notes": "Expect: Arvind Mehta v. Northfield Logistics Pvt. Ltd.",
+    "pass": true,
+    "actual_answer": "In Civil Suit No. CV-2024-8812, the plaintiff, Arvind Mehta, is suing the defendant, Northfield Logistics Pvt. Ltd.",
+    "actual_source_files": [
+      "01_matter_memo_arvind_v_northfield.md",
+      "03_hearing_notice_template.md"
+    ]
+  },
+  {
+    "id": "q02",
+    "question": "What is the limitation period for contract claims under the fictional Riverside Code?",
+    "expected_source_files": [
+      "01_matter_memo_arvind_v_northfield.md"
+    ],
+    "notes": "Expect: three years from breach date.",
+    "pass": false,
+    "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=60)"
+  },
+  {
+    "id": "q03",
+    "question": "How much notice must either party give to end Priya Nambiar's employment agreement with Bluecrest Analytics?",
+    "expected_source_files": [
+      "02_employment_agreement_excerpt.md"
+    ],
+    "notes": "Expect: 60 days written notice.",
+    "pass": false,
+    "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=60)"
+  },
+  {
+    "id": "q04",
+    "question": "How long does the non-compete clause in the Bluecrest Analytics employment agreement last after the employee leaves?",
+    "expected_source_files": [
+      "02_employment_agreement_excerpt.md"
+    ],
+    "notes": "Expect: 12 months.",
+    "pass": false,
+    "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=60)"
+  },
+  {
+    "id": "q05",
+    "question": "How many clear days before a hearing must parties file written arguments?",
+    "expected_source_files": [
+      "03_hearing_notice_template.md"
+    ],
+    "notes": "Expect: seven clear days.",
+    "pass": false,
+    "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=60)"
+  },
+  {
+    "id": "q06",
+    "question": "What time is the hearing listed for Case CV-2024-8812 on invoice set-off arguments?",
+    "expected_source_files": [
+      "03_hearing_notice_template.md"
+    ],
+    "notes": "Expect: 11:00 a.m.",
+    "pass": false,
+    "error": "HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=60)"
+  },
+  {
+    "id": "q07",
+    "question": "Under the fictional Riverside Commercial Courts Act, what interest rate may be awarded on delayed payments if the contract fixes no rate?",
+    "expected_source_files": [
+      "04_statute_style_excerpt_fictional.md"
+    ],
+    "notes": "Expect: 9% per year simple interest.",
+    "pass": true,
+    "actual_answer": "Under Section 22 of the fictional Riverside Commercial Courts Act, if a contract fixes no rate, simple interest at 9% per year may be awarded on admitted dues from the date of demand until payment.",
+    "actual_source_files": [
+      "04_statute_style_excerpt_fictional.md"
+    ]
+  },
+  {
+    "id": "q08",
+    "question": "Above what claim amount must a commercial suit go to mandatory mediation, and for how many days?",
+    "expected_source_files": [
+      "04_statute_style_excerpt_fictional.md"
+    ],
+    "notes": "Expect: above five lakh fictional rupees, 30 days mandatory mediation unless both parties waive in writing.",
+    "pass": true,
+    "actual_answer": "A commercial suit must go to mandatory mediation if the claim amount is above five lakh fictional rupees, and the mediation lasts for 30 days (unless waived in writing by both parties).",
+    "actual_source_files": [
+      "04_statute_style_excerpt_fictional.md"
+    ]
+  },
+  {
+    "id": "q09",
+    "question": "What percentage of open invoices did Northfield offer to pay in the settlement call?",
+    "expected_source_files": [
+      "05_counsel_notes_settlement.md"
+    ],
+    "notes": "Expect: 70% of open invoices, in exchange for Arvind dropping the damage counterclaim.",
+    "pass": true,
+    "actual_answer": "In the settlement call, Northfield offered to pay 70% of open invoices on the condition that Arvind drops the damage counterclaim.",
+    "actual_source_files": [
+      "05_counsel_notes_settlement.md"
+    ]
+  },
+  {
+    "id": "q10",
+    "question": "What counter-offer percentage was the client instruction for the settlement negotiation?",
+    "expected_source_files": [
+      "05_counsel_notes_settlement.md"
+    ],
+    "notes": "Expect: counter at 85%.",
+    "pass": true,
+    "actual_answer": "The client instruction for the settlement negotiation was to counter-offer at 85% of open invoices.",
+    "actual_source_files": [
+      "05_counsel_notes_settlement.md"
+    ]
+  },
+  {
+    "id": "q11",
+    "question": "What is the monthly rent for Unit 4B, Harbor View Tower?",
+    "expected_source_files": [
+      "06_property_lease_clause.md"
+    ],
+    "notes": "Expect: Rs 45,000 monthly rent, Rs 1,35,000 security deposit.",
+    "pass": false,
+    "error": "500 Server Error: Internal Server Error for url: http://localhost:8000/ask"
+  },
+  {
+    "id": "q12",
+    "question": "Is subletting allowed under the Harbor View Tower lease?",
+    "expected_source_files": [
+      "06_property_lease_clause.md"
+    ],
+    "notes": "Expect: not allowed without written consent of the lessor.",
+    "pass": false,
+    "error": "500 Server Error: Internal Server Error for url: http://localhost:8000/ask"
+  },
+  {
+    "id": "q13",
+    "question": "Within how many days must the security deposit be refunded after handover of Unit 4B, Harbor View Tower?",
+    "expected_source_files": [
+      "06_property_lease_clause.md"
+    ],
+    "notes": "Expect: 45 days, if no damage beyond normal wear.",
+    "pass": false,
+    "error": "500 Server Error: Internal Server Error for url: http://localhost:8000/ask"
+  },
+  {
+    "id": "out_of_corpus_01",
+    "question": "What is the capital of France?",
+    "expected_source_files": [],
+    "notes": "Out-of-corpus check -- expect the API to say it cannot find this in the documents, with zero citations.",
+    "pass": false,
+    "error": "500 Server Error: Internal Server Error for url: http://localhost:8000/ask"
+  },
+  {
+    "id": "out_of_corpus_02",
+    "question": "What was the verdict in the case of Lakeview Society v. City Water Board?",
+    "expected_source_files": [],
+    "notes": "Out-of-corpus check -- the corpus only mentions this case's hearing was adjourned (03_hearing_notice_template.md), it does not contain a verdict. Expect the API to not fabricate one; a partial/borderline case worth reviewing by hand.",
+    "pass": false,
+    "error": "500 Server Error: Internal Server Error for url: http://localhost:8000/ask"
+  }
+]
